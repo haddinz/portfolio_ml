@@ -20,7 +20,7 @@ async def GetApi():
 @router.post("/api/model/clasification_room/post")
 async def PostApi(image_upload: UploadFile):
     data = await image_upload.read()
-    save_to = DIR_UPLOAD / image_upload.filename
+    save_to = DIR_UPLOAD / image_upload.filename  
     with open(save_to, "wb") as file:
         file.write(data)
     
